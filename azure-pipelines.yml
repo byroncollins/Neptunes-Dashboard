@@ -17,6 +17,13 @@ steps:
     gradleOptions: '-Xmx3072m'
     javaHomeOption: 'JDKVersion'
     jdkVersionOption: '1.8'
+- task: AzureWebApp@1
+  inputs:
+    azureSubscription: 'Azure EV19 CC269'
+    appType: 'webAppLinux'
+    appName: 'neptunes-dashboard'
+    package: '$(System.DefaultWorkingDirectory)/**/*.zip'
+    runtimeStack: 'JAVA|8-jre8'
     jdkArchitectureOption: 'x64'
     publishJUnitResults: true
     testResultsFiles: '**/TEST-*.xml'
